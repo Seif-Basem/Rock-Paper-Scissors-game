@@ -46,7 +46,7 @@ function handleClick(event) {
         }, 300)
       }else {
         if (mediaQuery.matches) {
-          element.style.top = "51%"
+          element.style.top = "37%"
           element.style.left = "21%"
         } else {
           element.style.top = "53%"
@@ -55,6 +55,7 @@ function handleClick(event) {
         element.style.transform = "translate(-50%, -50%)"
         element.style.boxShadow = "0px 0px 0px 0px #00000078"
         element.style.cursor = "auto"
+        element.style.zIndex = "6"
       }
   });
   // get the data-choice attr of the clicked element
@@ -71,6 +72,9 @@ function handleClick(event) {
     // console.log(choice2);
     //result msg
     function resultMsg() {
+      // Reset box shadows
+      clickedElement.style.boxShadow = "0 0 0 0 #000";
+      randomElement.style.boxShadow = "0 0 0 0 #000";
       if (choice === choice2) {
         // console.log("tie")
         resultMSG.style.display = "block";
@@ -86,12 +90,14 @@ function handleClick(event) {
         resultMSG.style.display = "block";
         msg.innerHTML = "YOU WON";
         clickedElement.style.boxShadow = "0 0 0px 30px rgb(255 255 255 / 15%), 0 0 0 60px rgb(255 355 255 / 10%), 0 0 0 90px rgb(255 355 255 / 5%)"
+        randomElement.style.boxShadow = "0 0 0 0 #000";
         counter = counter + 10
       }else {
         // console.log("player lose")
         resultMSG.style.display = "block";
         msg.innerHTML = "YOU LOSE";
         randomElement.style.boxShadow = "0 0 0px 30px rgb(255 255 255 / 15%), 0 0 0 60px rgb(255 355 255 / 10%), 0 0 0 90px rgb(255 355 255 / 5%)"
+        clickedElement.style.boxShadow = "0 0 0 0 #000";
         //if counter is bigger that 0 u can decrease if not don't decrese
         if (counter > 0) {
           counter = counter - 1;
@@ -135,7 +141,4 @@ playAgain.onclick = function () {
   document.getElementById('paper2').style.display = "none";
   document.getElementById('scissors2').style.display = "none";
   document.getElementById('rock2').style.display = "none";
-  // Reset box shadows
-  clickedElement.style.boxShadow = "";
-  randomElement.style.boxShadow = "";
 }
