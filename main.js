@@ -46,7 +46,7 @@ function handleClick(event) {
         }, 300)
       }else {
         if (mediaQuery.matches) {
-          element.style.top = "51%"
+          element.style.top = "37%"
           element.style.left = "21%"
         } else {
           element.style.top = "53%"
@@ -55,6 +55,7 @@ function handleClick(event) {
         element.style.transform = "translate(-50%, -50%)"
         element.style.boxShadow = "0px 0px 0px 0px #00000078"
         element.style.cursor = "auto"
+        element.style.zIndex = "6"
       }
   });
   // get the data-choice attr of the clicked element
