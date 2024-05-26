@@ -78,7 +78,7 @@ function handleClick(event) {
       if (choice === choice2) {
         // console.log("tie")
         resultMSG.style.display = "block";
-        msg.innerHTML = "IT IS A TIE";
+        msg.innerHTML = "A DRAW";
         clickedElement.style.boxShadow = "0 0 0 0 #000";
         randomElement.style.boxShadow = "0 0 0 0 #000";
       }else if (
